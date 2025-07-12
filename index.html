@@ -1,130 +1,888 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>SUMIT KARMAKAR | Mechanical Engineering Portfolio</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #121212;
-      color: #f0f0f0;
-    }
-    header {
-      background: #1e1e1e;
-      padding: 2rem;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    header p {
-      font-size: 1.2rem;
-    }
-    nav {
-      background-color: #2a2a2a;
-      padding: 1rem;
-      text-align: center;
-    }
-    nav a {
-      color: #f0f0f0;
-      margin: 0 15px;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 2rem;
-    }
-    .project {
-      background: #1e1e1e;
-      margin-bottom: 2rem;
-      padding: 1rem;
-      border-radius: 8px;
-    }
-    .project img {
-      max-width: 100%;
-      border-radius: 8px;
-      margin-top: 1rem;
-    }
-    .contact {
-      text-align: center;
-    }
-    .youtube-section iframe {
-      width: 100%;
-      max-width: 560px;
-      height: 315px;
-      margin: 1rem auto;
-      display: block;
-      border-radius: 8px;
-    }
-    footer {
-      background: #1e1e1e;
-      padding: 1rem;
-      text-align: center;
-      font-size: 0.9rem;
-      color: #999;
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Professional portfolio of Sumit Karmakar, Mechanical Design Engineer and 3D Visualization Expert">
+    <title>SUMIT KARMAKAR | Mechanical Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-color: #00bcd4;
+            --dark-bg: #121212;
+            --card-bg: #1e1e1e;
+            --nav-bg: #2a2a2a;
+            --text-light: #f0f0f0;
+            --text-muted: #999;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        header {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            padding: 3rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 20% 50%, rgba(0, 188, 212, 0.1) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        header h1 {
+            font-size: 2.8rem;
+            margin-bottom: 0.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            position: relative;
+            z-index: 1;
+        }
+
+        nav {
+            background-color: var(--nav-bg);
+            padding: 1rem;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        nav a {
+            color: var(--text-light);
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+        }
+
+        nav a:hover {
+            color: var(--primary-color);
+            background-color: rgba(0, 188, 212, 0.1);
+        }
+
+        section {
+            padding: 3rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--primary-color);
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 60px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+
+        .project {
+            background: var(--card-bg);
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .project h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary-color);
+        }
+
+        .project img {
+            max-width: 100%;
+            border-radius: 8px;
+            margin-top: 1rem;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact {
+            text-align: center;
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .youtube-container {
+            position: relative;
+            margin-top: 2rem;
+        }
+
+        .youtube-scroll {
+            display: flex;
+            overflow-x: auto;
+            gap: 1.5rem;
+            scroll-behavior: smooth;
+            padding: 1rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--nav-bg);
+        }
+
+        .youtube-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .youtube-scroll::-webkit-scrollbar-track {
+            background: var(--nav-bg);
+            border-radius: 10px;
+        }
+
+        .youtube-scroll::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .youtube-scroll iframe {
+            flex: 0 0 45%;
+            height: 315px;
+            border-radius: 8px;
+            border: none;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .youtube-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 188, 212, 0.7);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 1rem 0.5rem;
+            z-index: 10;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .youtube-arrow:hover {
+            background: var(--primary-color);
+        }
+
+        .youtube-left {
+            left: -20px;
+        }
+
+        .youtube-right {
+            right: -20px;
+        }
+
+        @media (max-width: 767px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 0.9rem;
+                padding: 0.4rem 0.4rem;
+            }
+
+            section {
+                padding: 2rem 1rem;
+            }
+
+            .showcase-item {
+                flex: 0 0 85%;
+            }
+
+            .youtube-scroll iframe {
+                flex: 0 0 85%;
+                height: 200px;
+            }
+
+            .youtube-arrow {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .youtube-left {
+                left: -15px;
+            }
+
+            .youtube-right {
+                right: -15px;
+            }
+        }
+
+        .showcase-row {
+            margin-bottom: 3rem;
+            position: relative;
+        }
+
+        .showcase-row h3 {
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+            color: var(--text-light);
+        }
+
+        .showcase-grid {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+            gap: 1rem;
+            padding: 1rem 0;
+            scrollbar-width: thin;
+            scrollbar-color: var(--primary-color) var(--nav-bg);
+        }
+
+        .showcase-grid::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .showcase-grid::-webkit-scrollbar-track {
+            background: var(--nav-bg);
+            border-radius: 10px;
+        }
+
+        .showcase-grid::-webkit-scrollbar-thumb {
+            background-color: var(--primary-color);
+            border-radius: 10px;
+        }
+
+        .showcase-item {
+            flex: 0 0 30%;
+            min-width: 250px;
+            box-sizing: border-box;
+            background: var(--card-bg);
+            padding: 1rem;
+            border-radius: 8px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .showcase-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .showcase-item img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 0.5rem;
+        }
+
+        .showcase-item p {
+            margin: 0;
+            font-weight: 500;
+        }
+
+        .scroll-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 188, 212, 0.7);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 1rem 0.5rem;
+            z-index: 10;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+
+        .scroll-arrow:hover {
+            background: var(--primary-color);
+        }
+
+        .scroll-left {
+            left: -20px;
+        }
+
+        .scroll-right {
+            right: -20px;
+        }
+
+        footer {
+            background: var(--nav-bg);
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--text-light);
+            font-size: 1.5rem;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .tech-item {
+            background: rgba(0, 188, 212, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--primary-color);
+            border: 1px solid rgba(0, 188, 212, 0.3);
+        }
+
+        .project-details {
+            margin-top: 1.5rem;
+        }
+
+        .project-details h4 {
+            margin-bottom: 0.8rem;
+            color: var(--primary-color);
+        }
+
+        .project-details ul {
+            padding-left: 1.2rem;
+        }
+
+        .project-details li {
+            margin-bottom: 0.5rem;
+        }
+
+        .project-media {
+            margin-top: 1.5rem;
+            text-align: center;
+        }
+
+        .media-caption {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-top: 0.5rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Lightbox styles */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+        }
+
+        .lightbox-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width: 100%;
+        }
+
+        .lightbox-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-lightbox {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .lightbox-caption {
+            position: absolute;
+            bottom: 20px;
+            color: #fff;
+            text-align: center;
+            width: 100%;
+            padding: 10px;
+        }
+
+
+        /* CV Download Section */
+        .cv-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 8px;
+            margin: 2rem auto;
+            max-width: 800px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .profile-image {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid var(--primary-color);
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 188, 212, 0.3);
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .download-btn:hover {
+            background-color: #0097a7;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 188, 212, 0.4);
+        }
+
+        .download-btn i {
+            margin-right: 8px;
+            font-size: 1.2rem;
+        }
+
+        .cv-info {
+            margin-top: 1.5rem;
+        }
+
+        .cv-info p {
+            margin-bottom: 0.8rem;
+        }
+
+        @media (max-width: 600px) {
+            .profile-image {
+                width: 150px;
+                height: 150px;
+            }
+        }
+    </style>
 </head>
+
 <body>
-  <header>
-    <h1>SUMIT KARMAKAR</h1>
-    <p>Mechanical Engineer | CAD Designer | 3D Modeler & Animator</p>
-  </header>
+    <header>
+        <h1>SUMIT KARMAKAR</h1>
+        <p>Mechanical Design Engineer | CAD Designer | 3D Modeler & Animator | 3D Visualization Expert</p>
+    </header>
+    <nav>
+        <a href="#about"><i class="fas fa-user"></i> About</a>
+        <a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a>
+        <a href="#showcase"><i class="fas fa-images"></i> Showcase</a>
+        <a href="#youtube"><i class="fab fa-youtube"></i> YouTube</a>
+        <a href="#cv"><i class="fas fa-file-alt"></i> CV</a>
+        <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    </nav>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#showcase">Showcase</a>
-    <a href="#youtube">YouTube</a>
-    <a href="#contact">Contact</a>
-  </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a detail-oriented Mechanical Engineer with specialized expertise in computer-aided design (CAD) and 3D
+            visualization. I bridge the gap between engineering concepts and visual representation through precision
+            modeling, photorealistic rendering, and technical animation.</p>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>I’m a Mechanical Engineer passionate about CAD design, 3D modeling, and technical animations. Skilled in AutoCAD, Blender, and KeyShot.</p>
-  </section>
+        <p><strong>Core Competencies:</strong></p>
+        <ul>
+            <li>Advanced CAD modeling (AutoCAD)</li>
+            <li>Technical documentation and engineering drawings</li>
+            <li>Design for manufacturability (DFM) analysis</li>
+            <li>High-quality 3D rendering and visualization (Blender Cycles)</li>
+            <li>Mechanical animation and motion simulation</li>
+            <li>Finite Element Analysis (FEA) and Computational Fluid Dynamics (CFD)</li>
+        </ul>
 
-  <section id="portfolio">
-    <h2>Portfolio</h2>
+        <div class="tech-stack">
+            <span class="tech-item">AutoCAD</span>
+            <!-- <span class="tech-item">SolidWorks</span> -->
+            <!-- <span class="tech-item">Fusion 360</span> -->
+            <span class="tech-item">Blender</span>
+            <span class="tech-item">DaVinci Resolve</span>
+            <span class="tech-item">MS Office</span>
+            <!-- <span class="tech-item">3D Printing</span> -->
+            <!-- <span class="tech-item">CNC Machining</span> -->
+        </div>
+    </section>
+
+    <section id="portfolio">
+        <h2>Portfolio</h2>
+
+        <div class="project">
+            <h3>Plasma Thruster Prototype (2024)</h3>
+            <p>An experimental electric propulsion device demonstrating plasma physics principles through hands-on
+                engineering implementation.</p>
+
+            <div class="project-details">
+                <h4>Technical Implementation:</h4>
+                <ul>
+                    <li><strong>Core Innovation:</strong> Designed compact high-voltage system converting 5V USB input
+                        to 10-15kV discharge capable of atmospheric plasma generation</li>
+                    <li><strong>Electrode Assembly:</strong> Fabricated concentric electrode geometry with adjustable
+                        spark gap (0.5-2mm) for plasma optimization</li>
+                    <li><strong>Power Management:</strong> Implemented voltage multiplier circuit with hand-wound
+                        ferrite-core transformer achieving 2000:1 step-up ratio</li>
+                    <li><strong>Performance Validation:</strong> Quantified plasma characteristics using optical
+                        analysis and high-speed videography (2000fps)</li>
+                </ul>
+            </div>
+
+            <div class="project-media">
+                <img src="Images/WhatsApp Image 2025-07-12 at 1.08.07 PM.jpeg" style="width: 55%;"
+                    alt="Plasma Thruster Prototype showing violet arc discharge">
+                <div class="media-caption">
+                    <p>Operational prototype demonstrating atmospheric plasma arc between concentric electrodes</p>
+                </div>
+            </div>
+        </div>
+        <!-- 
     <div class="project">
-      <h3>Robotic Arm Model</h3>
-      <p>Designed in SolidWorks. 6-DOF robotic arm with inverse kinematics simulation.</p>
-      <img src="robotic-arm.jpg" alt="Robotic Arm Model">
+      <h3></h3>
+      <p></p>
+      
+      <div class="project-details">
+        <h4></h4>
+        <ul>
+          <li><strong></strong> </li>
+          <li><strong></strong> </li>
+          <li><strong></strong> </li>
+          <li><strong></strong> </li>
+        </ul>
+      </div>
+    </div> -->
+
+    </section>
+
+    <section id="showcase">
+        <h2>Showcase</h2>
+        <p>Here are some of my recent designs grouped by type.</p>
+
+        <div class="showcase-row">
+            <h3>AutoCAD</h3>
+            <button class="scroll-arrow scroll-left" onclick="scrollRow('renders', -1)">&#8592;</button>
+            <button class="scroll-arrow scroll-right" onclick="scrollRow('renders', 1)">&#8594;</button>
+            <div class="showcase-grid" id="renders">
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (62).png" alt="Universal Joint (Unassembled)">
+                    <p>Universal Joint (Unassembled)</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (63).png" alt="Mechanical Assembly Render">
+                    <p>Universal Joint (Assembled)</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (66).png" alt="Helical Gear">
+                    <p>Helical Gear</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (67).png" alt="Helical Gear (Isometric View)">
+                    <p>Helical Gear (Isometric View)</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (69).png" alt="Bolt">
+                    <p>Bolt</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (70).png" alt="Bolt (Isometric View)">
+                    <p>Bolt (Isometric View)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="showcase-row">
+            <h3>Interior Designs</h3>
+            <button class="scroll-arrow scroll-left" onclick="scrollRow('interior', -1)">&#8592;</button>
+            <button class="scroll-arrow scroll-right" onclick="scrollRow('interior', 1)">&#8594;</button>
+            <div class="showcase-grid" id="interior">
+                <div class="showcase-item">
+                    <img src="Images\WhatsApp Image 2025-07-12 at 1.08.08 PM.jpeg" alt="Bedroom Inteerior with Light">
+                    <p>Bedroom Inteerior (With Light)</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images\WhatsApp Image 2025-07-12 at 12.57.22 PM.jpeg" alt="Bedroom Inteerior without Light">
+                    <p>Bedroom Inteerior (Without Light)</p>
+                </div>
+            </div>
+        </div>
+        </div>
+
+        <div class="showcase-row">
+            <h3>Blender</h3>
+            <button class="scroll-arrow scroll-left" onclick="scrollRow('animations', -1)">&#8592;</button>
+            <button class="scroll-arrow scroll-right" onclick="scrollRow('animations', 1)">&#8594;</button>
+            <div class="showcase-grid" id="animations">
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (74).png" alt="4 Cylinder Diesel Engine Piston">
+                    <p>4 Cylinder Diesel Engine Piston</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images/Screenshot (72).png" alt="Bevel Gear & Pinion">
+                    <p>Bevel Gear & Pinion</p>
+                </div>
+                <div class="showcase-item">
+                    <img src="Images\window smokw light.png" alt="Sunlight Effect Through Window">
+                    <p>Sunlight Effect Through Window</p>
+                </div>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="youtube" class="youtube-section">
+        <h2>YouTube Videos</h2>
+        <p>Check out some of my technical videos and animations from my YouTube channel.</p>
+        <div class="youtube-container">
+            <button class="youtube-arrow youtube-left" onclick="scrollRow('youtube-scroll', -1)">&#8592;</button>
+            <button class="youtube-arrow youtube-right" onclick="scrollRow('youtube-scroll', 1)">&#8594;</button>
+            <div class="youtube-scroll" id="youtube-scroll">
+                <iframe src="https://www.youtube.com/embed/F2B8IoUSKvY?si=6jUpGmpLOERPWvFU"
+                    title="Plasma Thruster Demonstration" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/vUdisNEy1Xw?si=UQNugdZ5JxM8coH-"
+                    title="Gear Mechanism Animation" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/LXiDkjQ2oI4?si=mn7gPRRkVgUohkrq"
+                    title="CAD Modeling Tutorial" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/c3I86ygOr7A?si=014F_U3FYy1OXnvT" title="3D Printing Process"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/q90NIEK6rnE?si=QX7PQeTb3hVXsMT1"
+                    title="Engineering Simulation" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+                <iframe src="https://www.youtube.com/embed/Yb249Ch8DhU?si=Sx3vTrcEj0RUaNtj"
+                    title="Product Design Walkthrough" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="cv">
+        <h2>Curriculum Vitae</h2>
+        <div class="cv-section">
+            <img src="Images\Sumit Karmakar.jpg" alt="Sumit Karmakar Profile Photo" class="profile-image">
+            <h3>Sumit Karmakar</h3>
+            <p>Mechanical Design Engineer | CAD Specialist</p>
+
+            <div class="cv-info">
+                <p>Download my complete CV to view my full professional background, education, and skills.</p>
+                <p>File size: 156 KB | Format: PDF</p>
+            </div>
+
+            <a href="Images\cv\Sumit Karmakar CV.pdf" download="Sumit_Karmakar_CV.pdf" class="download-btn">
+                <i class="fas fa-download"></i> Download CV
+            </a>
+        </div>
+    </section>
+
+
+    <section id="contact" class="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out for collaborations, job opportunities, or any inquiries about my work.</p>
+
+        <div class="contact-info">
+            <p><i class="fas fa-envelope"></i> Email: <a
+                    href="mailto:karmakarsumit450@gmail.com">karmakarsumit450@gmail.com</a></p>
+            <p><i class="fas fa-phone"></i> Phone: +91 85974 27402</p>
+            <p><i class="fas fa-map-marker-alt"></i> Location: Kolkata, India</p>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/sumit-karmakar-417517246" target="_blank" aria-label="LinkedIn"><i
+                    class="fab fa-linkedin"></i></a>
+            <a href="http://www.youtube.com/@SumitvTube" target="_blank" aria-label="YouTube"><i
+                    class="fab fa-youtube"></i></a>
+            <a href="https://www.facebook.com/share/1B24yAirTQ/" target="_blank" aria-label="Facebook"><i
+                    class="fab fa-facebook"></i></a>
+            <a href="https://github.com/sumitkarmakar7" target="_blank" aria-label="GitHub"><i
+                    class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/my_self_sumit3?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+                target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 SUMIT KARMAKAR. All rights reserved.
+        <p>Designed and developed with <i class="fas fa-heart" style="color: #ff5252;"></i> by Supriya Mandal</p>
+    </footer>
+
+    <script>
+        function scrollRow(rowId, direction) {
+            const row = document.getElementById(rowId);
+            const scrollAmount = row.clientWidth / 2;
+            row.scrollBy({ left: scrollAmount * direction, behavior: 'smooth' });
+        }
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+
+        // Lightbox functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Get all images that should be zoomable
+            const zoomableImages = document.querySelectorAll('.showcase-item img, .project-media img');
+
+            // Get lightbox elements
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxCaption = document.getElementById('lightbox-caption');
+            const closeBtn = document.querySelector('.close-lightbox');
+
+            // Add click event to all zoomable images
+            zoomableImages.forEach(img => {
+                img.addEventListener('click', function () {
+                    lightbox.style.display = 'flex';
+                    lightboxImg.src = this.src;
+
+                    // Try to get caption from alt text or nearby element
+                    const caption = this.alt ||
+                        (this.nextElementSibling && this.nextElementSibling.classList.contains('media-caption') ?
+                            this.nextElementSibling.textContent : '');
+                    lightboxCaption.textContent = caption;
+                });
+            });
+
+            // Close lightbox when X is clicked
+            closeBtn.addEventListener('click', function () {
+                lightbox.style.display = 'none';
+            });
+
+            // Close lightbox when clicking outside image
+            lightbox.addEventListener('click', function (e) {
+                if (e.target === lightbox) {
+                    lightbox.style.display = 'none';
+                }
+            });
+
+            // Close with ESC key
+            document.addEventListener('keydown', function (e) {
+                if (e.key === 'Escape' && lightbox.style.display === 'flex') {
+                    lightbox.style.display = 'none';
+                }
+            });
+        });
+
+
+    </script>
+    <div id="lightbox" class="lightbox">
+        <span class="close-lightbox">&times;</span>
+        <div class="lightbox-content">
+            <img id="lightbox-img" class="lightbox-img" src="">
+            <div id="lightbox-caption" class="lightbox-caption"></div>
+        </div>
     </div>
-    <div class="project">
-      <h3>Gear Train Animation</h3>
-      <p>Planetary gear system animation rendered in Blender.</p>
-      <img src="gear-train.gif" alt="Gear Train Animation">
-    </div>
-  </section>
-
-  <section id="showcase">
-    <h2>Showcase</h2>
-    <p>Here are some of my recent renders and short animation clips.</p>
-    <img src="render1.jpg" alt="CAD Render 1">
-    <img src="animation1.gif" alt="CAD Animation 1">
-  </section>
-
-  <section id="youtube" class="youtube-section">
-    <h2>YouTube Videos</h2>
-    <p>Check out some of my CAD modeling and animation videos from YouTube.</p>
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
-    <iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
-  </section>
-
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: karmakarsumit450@gmail.com</p>
-    <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" style="color:#00bcd4">linkedin.com/in/yourprofile</a></p>
-    <!-- <p>GitHub: <a href="https://github.com/yourgithub" style="color:#00bcd4">github.com/yourgithub</a></p> -->
-  </section>
-
-  <footer>
-    &copy; 2025 SUMIT KARMAKAR. All rights reserved.
-  </footer>
 </body>
+
 </html>
